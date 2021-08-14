@@ -1,6 +1,6 @@
 # General Concepts
 
-<img src="/img/spring-framework.png" width="100%" height="500">
+<img src="https://spring.io/images/OG-Spring.png" width="100%" height="500">
 
 ## 🎯 Objective
 
