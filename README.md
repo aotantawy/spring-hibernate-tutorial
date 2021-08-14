@@ -52,6 +52,18 @@
 ### Dependency injection & Inversion of control
 
   - Let say you create class A and this class take an object of class B as a parameter for the constructor, this hierarchy makes a dependency (class A depend upon class B), the problem arises when you have a set of classes and each class depend upon another class this will make your software highly coupled (bad architecture) as some parts will be collapsed when we change something
+  ```java 
+  class B {
+    // Some code
+  }
+  
+  class A {
+    B obj;
+    public A(B obj) {
+      this.obj = obj;
+    }
+  }
+  ```
   - SOLUTION: dependency injection instead of creating and controlling objects with ourselves we invert and delegate this task to someone else but who will be responsible? XML will make our software be loosely coupled as we will not hard code any object so no need to recompile the project
 
 
