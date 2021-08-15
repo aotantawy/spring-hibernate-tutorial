@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd">
+
+
+	<!-- Assistant beans -->
+	<bean id="football-assistant"
+		class="spring_core.assistant.FootballCoachAssistant">
+	</bean>
+
+	<bean id="baseball-assistant"
+		class="spring_core.assistant.BaseballCoachAssistant">
+	</bean>
+
+
+	<!-- Coach beans -->
+
+	<!-- General coach bean -->
+	<bean id="coach" class="spring_core.coach.FootballCoach">
+		<constructor-arg index="0" value="Ahmed Osama" />
+		<constructor-arg index="1" ref="football-assistant" />
+	</bean>
+
+	<!-- Specific coach bean -->
+	<bean id="football-coach" class="spring_core.coach.FootballCoach">
+		<constructor-arg index="0" value="Pep Guardiola" />
+		<constructor-arg index="1" ref="football-assistant" />
+	</bean>
+
+	<bean id="baseball-coach" class="spring_core.coach.BaseballCoach">
+		<constructor-arg index="0" value="Joe Maddon" />
+		<constructor-arg index="1" ref="baseball-assistant" />
+	</bean>
+
+
+</beans>
