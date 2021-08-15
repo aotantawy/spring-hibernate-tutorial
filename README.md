@@ -25,11 +25,11 @@
 
 ### What's spring & why to use it?
 
-  - spring is a java framework for building web applications and it's released at 2004
-  - spring came out to solve some problems in J2EE (Java enterprise edition)
-      - Enterprise java bean and their complex configurations
-      - poor performance
-  - therefore, spring is a simplified version of java enterprise edition
+  - spring is a java framework for building web applications and it was released back in 2004
+  - spring came out to solve some problems in J2EE (Jakarta enterprise edition)
+      1. Enterprise java bean (JEB) and their complex configurations
+      2. poor performance
+  - therefore, we can generally say that spring is a simplified version for building java enterprise applications
 
 ### Spring Goals
 
@@ -51,7 +51,7 @@
 
 ### Dependency injection & Inversion of control
 
-  - Let say you create class A and this class take an object of class B as a parameter for the constructor, this hierarchy makes a dependency (class A depend upon class B), the problem arises when you have a set of classes and each class depend upon another class this will make your software highly coupled (bad architecture) as some parts will be collapsed when we change something
+  - Let say you create class A and this class take an object of class B as a parameter for the constructor, this hierarchy makes a dependency (class A depend upon class B), the problem arises when you have a set of classes and each class depend upon another set of classes this will make your software highly coupled (bad architecture) as some parts will be collapsed when we change something
   ```java 
   class B {
     // Some code
@@ -64,12 +64,14 @@
     }
   }
   ```
-  - SOLUTION: dependency injection instead of creating and controlling objects with ourselves we invert and delegate this task to someone else but who will be responsible? XML will make our software be loosely coupled as we will not hard code any object so no need to recompile the project
+  - SOLUTION: in order to solve the highly coupled problem we need to do:
+    1. Inversion of control: which is responsible for creating and managing objects 
+    2. Dependency injection: to inject required dependencies for each object
 
 
 ### Java Bean
 
-  - it's nothing but a java class that should have 3 things:
+  - it's nothing but a java class with some requirements:
       1. all member variables are private and have their setters and getters (setX,getX)
       2. default constructor 
       3. implement serializable
