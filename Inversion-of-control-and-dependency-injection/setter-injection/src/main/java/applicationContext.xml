@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd">
+
+
+	<!-- Assistant beans -->
+	<bean id="football-assistant"
+		class="spring_core.assistant.FootballCoachAssistant">
+	</bean>
+
+	<bean id="baseball-assistant"
+		class="spring_core.assistant.BaseballCoachAssistant">
+	</bean>
+
+
+	<!-- Coach beans -->
+
+	<!-- General coach bean -->
+	<bean id="coach" class="spring_core.coach.FootballCoach">
+		<property name="name" value="Pep Guardiola"></property>
+		<property name="assistant" ref="football-assistant"></property>
+	</bean>
+
+	<!-- Specific coach bean -->
+	<bean id="football-coach" class="spring_core.coach.FootballCoach">
+		<property name="name" value="Pep Guardiola"></property>
+		<property name="assistant" ref="football-assistant"></property>
+	</bean>
+
+	<bean id="baseball-coach" class="spring_core.coach.BaseballCoach">
+		<property name="name" value="Joe Maddon"></property>
+		<property name="assistant" ref="baseball-assistant"></property>
+	</bean>
+
+</beans>
