@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd">
+
+	<!-- load file to read values from -->
+	<context:property-placeholder
+		location="classpath:cars.properties" />
+
+
+	<!-- mechanic beans -->
+
+	<bean id="car-mechanic" class="com.utilities.mechanic.CarMechanic">
+	</bean>
+
+	<!-- vehicle beans -->
+
+	<bean id="car" class="com.utilities.vehicle.Car"
+		init-method="postConstruction" destroy-method="preDestruction">
+		<property name="model" value="${car1.model}" />
+		<property name="mechanic" ref="car-mechanic" />
+	</bean>
+
+</beans>
