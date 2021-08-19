@@ -11,20 +11,21 @@
 - [Spring Bean](#spring-bean)
 - [Bean Scope](#bean-scope)
 - [Bean life cycle](#bean-life-cycle)
-- [Aspect-oriented programming](#aspect-oriented-programming)
+- [Aspect-oriented programming](#aspect-oriented-programming-aop)
 - [Model-view-controller](#model-view-controller)
 - [Data Access Objects (DAO)](#data-access-objects-dao)
-- [Object-relational mapping (ORM)](#object-relational-mapping-orm)
+- [Code Samples Structure](#code-samples-structure)
 - [References](#-references)
 
 <img src="https://spring.io/images/OG-Spring.png" title="spring logo, src:spring.io" width="100%" height="500">
+
+--- 
 
 ## 🎯 Objective
 
 1. Learn the theory behind spring
 2. grasp general concepts of spring
 
----
 
 ### What's spring & why to use it?
 
@@ -69,9 +70,9 @@ class A {
 }
 ```
 
-- SOLUTION: in order to solve the highly coupled problem we need to do:
-  1. Inversion of control: which is responsible for creating and managing objects
-  2. Dependency injection: to inject required dependencies for each object
+- in order to, make software loosely coupled we need to apply:
+  1. Inversion of control principle: to create and manage objects
+  2. Dependency injection principle: to inject required dependencies for each object
 
 ### Spring container
 
@@ -100,22 +101,22 @@ class A {
 
   <img src="https://media.geeksforgeeks.org/wp-content/uploads/20200428011831/Bean-Life-Cycle-Process-flow3.png" title="bean life cycle src:geeksforgeeks.org" width="100%" height="500">
 
-### Aspect-oriented programming
+### Aspect-oriented programming (AOP)
 
-- it's a programming paradigm that is used to increase software modularity by applying the separation of concerns principle
-- let say we have 5 different classes each of which needs a logger method this architecture has a bad smell as 5 different classes have the same function therefore we decided to create a new class called logger and any class that want to log either extend or use logger class
-- PROBLEM: 1-those classes will be highly dependent (coupling) on the cross-cutting class (logger class), 2- if we want to change some behavior of the logger class we need to pass through all the classes and modify them
-- SOLUTION: here is where the AOP will come to solve those problems
-  1. Define point-cut (logger, security) point where it's used across multiple classes
-  2. call those cross-cutting objects an aspect (logger aspect, security aspect) a special separated class
-  3. create aspect configuration: these configurations will define what do you want to do and when
+- it's a programming paradigm that uses the separation of concerns cross-cutting principle to increase modularity which consequently decreases coupling
+- **Eg.** if we define 5 classes each one contains a logger object
+- How to apply AOP ?
+  1. define point-cut (logger, security), points where cross-cutting concerns are applied
+  2. create aspect for each point-cut (logger aspect, security aspect) which defines what will this aspect do?
+  3. create aspect configurations, which defines when and where will those aspects execute?
 
 ### Model-view-controller
 
-- it's a software design pattern "architecture" in which your software is separated into 3 parts:
-  1. Model: this component is responsible for dealing with data in the database
-  2. View: this component is responsible for dealing with user view (UI) in which the user will interact with
-  3. Controller: responsible for managing the flow between Model, view, and dealing with user requests and response
+- it's a software architectural pattern in which your software is separated into 3 parts:
+  <img src="https://qph.fs.quoracdn.net/main-qimg-c3f2bef1693561dfb24e0f00aa592c80" title="MVC, src:quora.com" width="400" height="300" style="float:rigth;">
+  1. Model: it's a component that handles anything related to data in the software
+  2. View: it's a component that deals with UI related stuff
+  3. Controller: it's a component that manages flow between the other two components and handles any business logic in the software
 
 ### Data Access Objects (DAO)
 
@@ -137,11 +138,20 @@ interface EmployeeDAO {
 }
 ```
 
-### Object-relational mapping (ORM)
-
-- it's an abstract layer for accessing databases easily which maps data into simple objects (POJO or JSON)
 
 ---
+
+### Code samples structure
+  <img src="/diagrams/class-diagram.png" title="Class diagram" width="100%" height="400">
+  
+  *Class Diagram*
+  
+  <img src="/diagrams/spring-components.png" title="Spring components" width="100%" height="400">
+  
+  *Spring Components*
+  
+  > **_Note:_** This is not the optimal structure and you may find some little changes in some examples for simplification purposes
+
 
 ## 🔗 References
 
