@@ -112,23 +112,20 @@ class A {
 
 ### Model-view-controller (MVC)
 
+   <img src="https://qph.fs.quoracdn.net/main-qimg-c3f2bef1693561dfb24e0f00aa592c80" title="MVC, src:quora.com" width="75%" height="300" style="float:right;">
+    
+  *Ideal MVC*  
+
 - it's a software architectural pattern in which your software is separated into 3 parts:
-  <figure>
-    <blockquote>
-      <img src="https://qph.fs.quoracdn.net/main-qimg-c3f2bef1693561dfb24e0f00aa592c80" title="MVC, src:quora.com" width="100%" height="300" >
-    </blockquote>
-    <figurecaption>Ideal MVC</figurecaption>
-  </figure>
+  
   1. Model: it's a component that handles anything related to data in the software
   2. View: it's a component that deals with UI related stuff
   3. Controller: it's a component that manages flow between the other two components and handles any business logic in the software
-  <figure>
-    <blockquote>
-      <img src="/diagrams/spring-mvc.png" title="Spring MVC" width="100%" height="300" >
-    </blockquote>
-    <figurecaption>Spring MVC</figurecaption>
-  </figure> 
 
+    <img src="/diagrams/spring-mvc.png" title="Spring MVC" width="75%" height="300" style="float:right;">
+    
+   *Spring MVC*
+      
 ### Data Access Objects (DAO)
 
 - it's a design pattern that provides an interface that provides access to underlying databases throughout some (CRUD) operations
