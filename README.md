@@ -12,7 +12,7 @@
 - [Bean Scope](#bean-scope)
 - [Bean life cycle](#bean-life-cycle)
 - [Aspect-oriented programming](#aspect-oriented-programming-aop)
-- [Model-view-controller](#model-view-controller)
+- [Model-view-controller](#model-view-controller-mvc)
 - [Data Access Objects (DAO)](#data-access-objects-dao)
 - [Code Samples Structure](#code-samples-structure)
 - [References](#-references)
@@ -110,13 +110,24 @@ class A {
   2. create aspect for each point-cut (logger aspect, security aspect) which defines what will this aspect do?
   3. create aspect configurations, which defines when and where will those aspects execute?
 
-### Model-view-controller
+### Model-view-controller (MVC)
 
 - it's a software architectural pattern in which your software is separated into 3 parts:
-  <img src="https://qph.fs.quoracdn.net/main-qimg-c3f2bef1693561dfb24e0f00aa592c80" title="MVC, src:quora.com" width="400" height="300" style="float:rigth;">
+  <figure>
+    <blockquote>
+      <img src="https://qph.fs.quoracdn.net/main-qimg-c3f2bef1693561dfb24e0f00aa592c80" title="MVC, src:quora.com" width="100%" height="300" >
+    </blockquote>
+    <figurecaption>Ideal MVC</figurecaption>
+  </figure>
   1. Model: it's a component that handles anything related to data in the software
   2. View: it's a component that deals with UI related stuff
   3. Controller: it's a component that manages flow between the other two components and handles any business logic in the software
+  <figure>
+    <blockquote>
+      <img src="/diagrams/spring-mvc.png" title="Spring MVC" width="100%" height="300" >
+    </blockquote>
+    <figurecaption>Spring MVC</figurecaption>
+  </figure> 
 
 ### Data Access Objects (DAO)
 
