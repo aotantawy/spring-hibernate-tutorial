@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd">
+
+	<!-- Define beans using annotations -->
+	<context:component-scan
+		base-package="com.example"></context:component-scan>
+
+	<!-- Inversion of control -->
+	<bean id="accountantXml" class="com.example.Accountant"></bean>
+	<bean id="secuirtyGuardXml" class="com.example.SecurityGuard"></bean>
+
+	<!-- Constructor Injection -->
+	<bean id="accountantDepartmentXml"
+		class="com.example.AccountingDepartment"></bean>
+
+	<bean id="accountantConstructorXml" class="com.example.Accountant">
+		<constructor-arg index="0" value="Ahmed Osama Tantawy" />
+		<constructor-arg index="1"
+			ref="accountantDepartmentXml" />
+	</bean>
+
+	<!-- Setter Injection -->
+
+	<bean id="securityDepartmentXml"
+		class="com.example.SecurityDepartment"></bean>
+
+	<bean id="securitySetterXml" class="com.example.SecurityGuard">
+		<property name="employeeName" value="Ahmed Osama Tantawy"></property>
+		<property name="department" ref="securityDepartmentXml"></property>
+	</bean>
+
+
+</beans>
