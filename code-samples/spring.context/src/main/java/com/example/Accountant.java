@@ -1,15 +1,16 @@
 package com.example;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.stereotype.Component;
 
-@Component // For defining bean using annotations
+//@Component // For defining bean using annotations
 public class Accountant implements Employee {
-	@Value("osos")
+	@Value("Ahmed Osama")
 	private String employeeName;
 
 	@Autowired
+	@Qualifier("accountingDepartment")
 	private Department department;
 
 	public Accountant() {
