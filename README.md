@@ -10,6 +10,10 @@
     - [What is bean life-cycle?](#what-is-bean-life-cycle)
 - [What is dependency injection & inversion of control?](#what-is-dependency-injection-and-inversion-of-control)
 - [What is aspect-oriented programming?](#what-is-aspect-oriented-programming)
+- [Spring MVC](#spring-mvc)
+    - [What is Spring MVC?](#what-is-spring-mvc)
+    - [Why to use Spring MVC](#why-to-use-spring-mvc)
+    - [Structure of spring MVC](#Structure-of-spring-MVC)
 - [Hibernate](#hibernate)
     - [What is hibernate?](#what-is-hibernate)
     - [What is an entity life-cycle?](#what-is-an-entity-life-cycle)
@@ -87,6 +91,23 @@
     1. Define point-cut (logger, security) "cross-cutting concern"
     2. Define those points into something called aspect
     3. Define configuration for each aspect (when-where you want to call this aspect)
+
+## Spring MVC
+
+### What is spring MVC?
+
+- It's a spring framework for building web-apps by applying model-view-controller architectural style
+
+### Why to use spring MVC?
+
+- Separation of concerns which make your app able to:
+    1. scale easily.
+    2. be tested
+    3. be developed in a fast and parallel fashion
+
+### Structure of spring MVC
+
+<img src="https://miro.medium.com/max/1400/1*MxXBy-NzIaUUKxkLUIGISQ.png" title="Spring MVC architecture src:medium.org" width="100%" height="500">
 
 ## Hibernate
 
